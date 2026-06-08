@@ -26,3 +26,23 @@ html, body {
     gap: 20px;
     height: 80%;
 }
+@media (max-width: 768px) {
+    html, body, #root {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .bento {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 12px;
+        border-radius: 32px !important;
+    }
+
+    .glass {
+        border-radius: 32px;
+    }
+}

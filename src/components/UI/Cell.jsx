@@ -6,94 +6,93 @@ export default function Cell({
                                  row = 1,
                                  colStart,
                                  rowStart,
-                                 children,
+                                 preview,
+                                 expanded: expandedContent,
                                  className = "",
+                                 expandedClassName = "",
                              }) {
-    const [expanded, setExpanded] = useState(false)
+    const [isExpanded, setIsExpanded] = useState(false)
 
     return (
         <>
-            {/* placeholder — holds the grid slot when cell is expanded so layout doesn't shift */}
-            {expanded && (
-                <div
-                    style={{
-                        gridColumn: `${colStart} / span ${col}`,
-                        gridRow:    `${rowStart} / span ${row}`,
-                    }}
-                />
+            {/* holds the grid slot while expanded */}
+            {isExpanded && (
+                <div style={{
+                    gridColumn: `${colStart} / span ${col}`,
+                    gridRow:    `${rowStart} / span ${row}`,
+                }} />
             )}
 
-            <motion.div
-                className={`border-2 border-white/20 bg-white/10 p-4 overflow-hidden ${className}`}
-                style={{
-                    // when collapsed — live in the grid normally
-                    gridColumn: expanded ? undefined : `${colStart} / span ${col}`,
-                    gridRow:    expanded ? undefined : `${rowStart} / span ${row}`,
-
-                    // when expanded — rip out of grid and cover the container
-                    position:   expanded ? "absolute" : "relative",
-                    inset:      expanded ? 0 : undefined,
-                    zIndex:     expanded ? 50 : 1,
-                    borderRadius: expanded ? "40px" : undefined,
-                    cursor: "pointer",
-                }}
-                layout
-                animate={{
-                    borderColor: expanded ? "rgba(255,255,255,0.45)" : "rgba(255,255,255,0.2)",
-                    backgroundColor: expanded ? "rgba(255,255,255,0.15)" : "rgba(255,255,255,0.08)",
-                }}
-                whileHover={!expanded ? {
-                    backgroundColor: "rgba(255,255,255,0.12)",
-                    borderColor: "rgba(255,255,255,0.3)",
-                } : {}}
-                whileTap={!expanded ? { scale: 0.985 } : {}}
-                transition={{
-                    layout: { type: "spring", stiffness: 280, damping: 28 },
-                    borderColor: { duration: 0.2 },
-                    backgroundColor: { duration: 0.2 },
-                }}
-                onClick={() => !expanded && setExpanded(true)}
-            >
-                {/* shimmer top line */}
-                <AnimatePresence>
-                    {expanded && (
+            <AnimatePresence mode="wait">
+                {!isExpanded ? (
+                    <motion.div
+                        key="collapsed"
+                        className={`border-2 border-white/20 bg-white/5
+                                    overflow-hidden cursor-pointer ${className}`}
+                        style={{
+                            gridColumn: `${colStart} / span ${col}`,
+                            gridRow:    `${rowStart} / span ${row}`,
+                        }}
+                        initial={{ opacity: 0, scale: 0.96 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.98, transition: { duration: 0.08, ease: "easeIn" } }}
+                        transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.2 }}
+                        whileHover={{
+                            backgroundColor: "rgba(255,255,255,0.3)",
+                            borderColor: "rgba(255,255,255,0)",
+                            transition: { duration: 0.15 },
+                        }}
+                        whileTap={{ scale: 0.97, transition: { duration: 0.1 } }}
+                        onClick={() => setIsExpanded(true)}
+                    >
                         <motion.div
-                            className="absolute inset-x-0 top-0 h-px bg-white/40 pointer-events-none"
-                            initial={{ scaleX: 0, opacity: 0 }}
-                            animate={{ scaleX: 1, opacity: 1 }}
-                            exit={{ scaleX: 0, opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                        />
-                    )}
-                </AnimatePresence>
+                            className="w-full h-full"
+                            initial={{ opacity: 0, y: 12, x: 5 }}
+                            animate={{ opacity: 1, y: 0, x: 0 }}
+                            exit={{ opacity: 0, transition: { duration: 0.05 } }}
+                            transition={{ delay: 0.4, duration: 0.2 }}
+                        >
+                            {preview}
+                        </motion.div>
+                    </motion.div>
 
-                {/* close button */}
-                <AnimatePresence>
-                    {expanded && (
+                ) : (
+                    <motion.div
+                        key="expanded"
+                        className={`absolute overflow-hidden z-50 ${expandedClassName}`}
+                        style={{ inset: "24px" }}
+                        initial={{ opacity: 0.6, scale: 0.90, borderRadius: "60px" }}
+                        animate={{ opacity: 1, scale: 1, borderRadius: "60px",
+                            backgroundColor: "#848484" }}
+                        exit={{ opacity: 0, scale: 0.96, transition: { duration: 0.08, ease: "easeIn" } }}
+                        transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.05 }}
+                    >
                         <motion.button
-                            className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full
-                         bg-white/10 border border-white/20 text-white/60
-                         hover:bg-white/20 hover:text-white
-                         flex items-center justify-center text-lg leading-none"
-                            initial={{ opacity: 0, scale: 0.4, rotate: -90 }}
+                            className="absolute top-8 right-8 z-10 w-10 h-10 rounded-full
+                           bg-black/60 border border-white/20 text-white/80
+                           hover:bg-black/80 hover:text-white
+                           flex items-center justify-center text-xl leading-none"
+                            initial={{ opacity: 0, scale: 0.5, rotate: -90 }}
                             animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                            exit={{ opacity: 0, scale: 0.4, rotate: 90 }}
-                            transition={{ type: "spring", stiffness: 400, damping: 22 }}
-                            onClick={e => { e.stopPropagation(); setExpanded(false) }}
+                            exit={{ opacity: 0, transition: { duration: 0.05 } }}
+                            transition={{ type: "spring", stiffness: 400, damping: 22, delay: 0.1 }}
+                            onClick={() => setIsExpanded(false)}
                         >
                             ×
                         </motion.button>
-                    )}
-                </AnimatePresence>
 
-                {/* content */}
-                <motion.div
-                    animate={{ opacity: expanded ? 1 : 0.75 }}
-                    transition={{ duration: 0.2 }}
-                >
-                    {children}
-                </motion.div>
-            </motion.div>
+                        <motion.div
+                            className="w-full h-full"
+                            initial={{ opacity: 0, y: 12, x: 8 }}
+                            animate={{ opacity: 1, y: 0, x: 0 }}
+                            exit={{ opacity: 0, transition: { duration: 0.05 } }}
+                            transition={{ duration: 0.25, delay: 0.4 }}
+                        >
+                            {expandedContent}
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     )
 }
