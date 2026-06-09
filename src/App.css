@@ -15,34 +15,6 @@ html, body {
     backdrop-filter: blur(4px) saturate(120%);
     -webkit-backdrop-filter: blur(4px) saturate(120%);
     background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
-    border-radius: 80px;
-}
-.bento {
-    display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(8, 1fr);  /* 1fr works — grid has h-3/4 of h-screen */
-    gap: 20px;
-    height: 80%;
-}
-@media (max-width: 768px) {
-    html, body, #root {
-        height: auto;
-        min-height: 100vh;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
-    .bento {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        gap: 12px;
-        border-radius: 32px !important;
-    }
-
-    .glass {
-        border-radius: 32px;
-    }
+    border-radius: 20px;
 }

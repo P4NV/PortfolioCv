@@ -1,0 +1,55 @@
+.bento {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(4, 140px);
+    gap: 16px;
+    width: 90vw;
+    height: 80vh;
+    max-height: 800px;
+    max-width: 1300px;
+}
+@media (max-width: 1445px) {
+    .bento {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(4, 140px);
+        gap: 16px;
+        width: 95vw;
+        height: 80vh;
+        max-height: 800px;
+        max-width: 1500px;
+    }
+}
+
+/* Big profile — left side, full height */
+.profile-card {
+    grid-column: 1 / 9;
+    grid-row: 1 / 4;
+}
+@media (max-width: 1445px) {
+    .profile-card {
+
+    }
+}
+
+/* Skills — tall vertical strip next to profile */
+.skills-card {
+    grid-column: 9 / 13;
+    grid-row: 1 / 6;
+}
+
+/* 3 smaller cards stacked on far right */
+.small-card-a {
+    grid-column: 1 / 5;
+    grid-row: 4 / 5;
+}
+
+.small-card-b {
+    grid-column: 5 / 9;
+    grid-row: 4 / 5;
+}
+
+.small-card-c {
+    grid-column: 1 / 9;
+    grid-row: 5 / 5;
+}
