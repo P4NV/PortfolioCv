@@ -3,10 +3,11 @@ import ProfileCard from "./Cards/ProfileCard.jsx";
 import SkillsCard from "./Cards/SkillsCard.jsx";
 import ProjectsCard from "./Cards/ProjectsCard.jsx";
 import ExperienceCard from "./Cards/ExperienceCard.jsx";
+import TerminalCard from "./Cards/TerminalCard.jsx";
 
 export default function MainContainer() {
     return (
-        <div className='w-screen min-h-screen flex justify-center items-center py-8'>
+        <div className='w-screen min-h-screen flex justify-center items-center'>
             <div className='bento'>
                 {/* Big profile card — spans 8 cols, 4 rows */}
                 <Card className='profile-card p-10'>
@@ -27,8 +28,8 @@ export default function MainContainer() {
                     <ExperienceCard/>
                 </Card>
 
-                <Card className='small-card-c p-5'>
-                    <p>Contact</p>
+                <Card className='small-card-c max-h-[172px] overflow-clip'>
+                    <TerminalCard/>
                 </Card>
 
             </div>

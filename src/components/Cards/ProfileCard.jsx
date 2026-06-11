@@ -3,7 +3,7 @@ function ProfileCard() {
     const links = [
         { id: 1, href: "https://github.com/P4NV",   icon: <img src="/github.png" alt="GitHub" className="w-full h-full object-contain" /> },
         { id: 2, href: "https://www.linkedin.com/in/antonio-pavin-764383335/", icon: <img src="/linkedin.png" alt="LinkedIn" className="w-full h-full object-contain" /> },
-        { id: 3, href: "",  icon: <></> },
+        { id: 3, href: "mailto:ex000static@gmail.com",  icon: <img src='/envelope.png' alt='mail'></img> },
         { id: 4, href: "",  icon: <></> },
         { id: 5, href: "",  icon: <></> },
     ];
@@ -28,7 +28,7 @@ function ProfileCard() {
                 </div>
                 <div className="flex flex-row gap-10">
                     {links.map((link) => (
-                        <button key={link.id} className="w-14 h-14 hover:scale-95 border-white border-b-4 border-r-4 rounded-[18px]">
+                        <button key={link.id} className="w-14 h-14 hover:scale-95 border-white border-b-4 border-r-4 rounded-[18px] overflow-clip">
                             <a href={link.href} target="_blank" rel="noopener noreferrer">
                                 {link.icon}
                             </a>
