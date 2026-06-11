@@ -1,5 +1,8 @@
 import Card from "./UI_Components/Card.jsx";
-import ProfileCard from "./ProfileCard.jsx";
+import ProfileCard from "./Cards/ProfileCard.jsx";
+import SkillsCard from "./Cards/SkillsCard.jsx";
+import ProjectsCard from "./Cards/ProjectsCard.jsx";
+import ExperienceCard from "./Cards/ExperienceCard.jsx";
 
 export default function MainContainer() {
     return (
@@ -12,16 +15,16 @@ export default function MainContainer() {
 
                 {/* Skills — spans 4 cols, tall (4 rows) */}
                 <Card className='skills-card p-10'>
-                    <h2>Skills</h2>
+                    <SkillsCard/>
                 </Card>
 
                 {/* 3 smaller cards on the right */}
-                <Card className='small-card-a p-5'>
-                    <p>Projects</p>
+                <Card className='small-card-a p-5 '>
+                    <ProjectsCard/>
                 </Card>
 
                 <Card className='small-card-b p-5'>
-                    <p>Experience</p>
+                    <ExperienceCard/>
                 </Card>
 
                 <Card className='small-card-c p-5'>
