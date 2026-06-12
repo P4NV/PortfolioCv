@@ -10,12 +10,12 @@ export default function MainContainer() {
         <div className='w-screen min-h-screen flex justify-center items-center'>
             <div className='bento'>
                 {/* Big profile card — spans 8 cols, 4 rows */}
-                <Card className='profile-card p-10'>
+                <Card className='profile-card p-10 max-xl:p-5'>
                     <ProfileCard />
                 </Card>
 
                 {/* Skills — spans 4 cols, tall (4 rows) */}
-                <Card className='skills-card p-10'>
+                <Card className='skills-card p-10 max-xl:p-5'>
                     <SkillsCard/>
                 </Card>
 
@@ -28,7 +28,7 @@ export default function MainContainer() {
                     <ExperienceCard/>
                 </Card>
 
-                <Card className='small-card-c max-h-[172px] overflow-clip'>
+                <Card className='small-card-c overflow-clip'>
                     <TerminalCard/>
                 </Card>
 
