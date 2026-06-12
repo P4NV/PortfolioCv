@@ -9,51 +9,100 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(4, 140px);
     gap: 16px;
-    width: 90vw;
-    height: 80vh;
-    max-height: 800px;
+    margin: 10px 16px;
     max-width: 1300px;
 }
-@media (max-width: 1445px) {
-    .bento {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(4, 140px);
-        gap: 16px;
-        width: 90vw;
-        max-width: 1200px;
+    @media (max-width: 1445px) {
+        .bento {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(5, 140px);
+            gap: 16px;
+            max-width: 1300px;
+        }
     }
-}
+        @media (max-width: 1100px) {
+            .bento {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: repeat(12, 110px);
+                gap: 16px;
+                max-width: 1100px;
+            }
+        }
 
-/* Big profile — left side, full height */
+/* Big profile — leftTop side, full height */
 .profile-card {
     grid-column: 1 / 9;
     grid-row: 1 / 4;
 }
-@media (max-width: 1445px) {
-    .profile-card {
-
+    @media (max-width: 1445px) {
+        .profile-card {
+        grid-column: 1 / 9;
+        }
     }
-}
+        @media (max-width: 1100px) {
+            .profile-card {
+                grid-column: 1 / 13;
+                grid-row: 1 / 4;
+            }
+        }
 
-/* Skills — tall vertical strip next to profile */
+
+/* Skills — tall vertical strip Right to profile */
 .skills-card {
     grid-column: 9 / 13;
     grid-row: 1 / 6;
 }
+    @media (max-width: 1445px) {
+        .skills-card {
+            grid-column: 9 / 15;
+        }
+    }
+        @media (max-width: 1100px) {
+            .skills-card {
+                grid-column: 7 / 13;
+                grid-row: 4 / 10;
+            }
+        }
 
-/* 3 smaller cards stacked on far right */
+/* 3 smaller cards stacked on center */
 .small-card-a {
     grid-column: 1 / 5;
     grid-row: 4 / 5;
 }
+    @media (max-width: 1445px) {
+    }
+        @media (max-width: 1100px) {
+            .small-card-a {
+                grid-column: 1 / 7;
+                grid-row: 4 / 7;
+            }
+        }
 
 .small-card-b {
     grid-column: 5 / 9;
     grid-row: 4 / 5;
 }
+    @media (max-width: 1445px) {
+    }
+        @media (max-width: 1100px) {
+            .small-card-b {
+                grid-column: 1 / 7;
+                grid-row: 7 / 10;
+            }
+        }
 
 .small-card-c {
     grid-column: 1 / 9;
     grid-row: 5 / 5;
 }
+    @media (max-width: 1445px) {
+
+    }
+        @media (max-width: 1100px) {
+            .small-card-c {
+                grid-column: 1 / 13;
+                grid-row: 10 / 11;
+            }
+        }

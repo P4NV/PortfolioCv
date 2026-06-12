@@ -12,7 +12,7 @@ function AppContent() {
     const location = useLocation()
 
     return (
-        <div className='relative w-screen min-h-screen overflow-y-auto'>
+        <div className='relative w-screen h-screen overflow-y-auto scrollbar-none'>
             <Background />
             <PageCurtain />
 
