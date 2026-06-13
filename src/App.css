@@ -2,8 +2,8 @@
 @theme{
     --breakpoint-xl: 1282px;
     --breakpoint-lg: 1052px;
-    --breakpoint-md: 770px;
-    --breakpoint-sm: 482px;
+    --breakpoint-md: 832px;
+    --breakpoint-sm: 422px;
 }
 
 html, body {

@@ -37,14 +37,14 @@ export default function TerminalCard() {
     }, [currentLine, currentChar])
 
     return (
-        <div className='bg-transparent p-6 font-mono text-sm'>
+        <div className='bg-transparent p-6 font-mono text-sm h-full'>
             <div className='flex gap-2 mb-4'>
                 <span className='w-3 h-3 rounded-full bg-red-400'></span>
                 <span className='w-3 h-3 rounded-full bg-yellow-400'></span>
                 <span className='w-3 h-3 rounded-full bg-green-400'></span>
             </div>
 
-            <div className='flex flex-col gap-1 text-white/70'>
+            <div className='flex flex-col gap-1 text-white/70 h-full'>
                 {displayed.map((line, i) => (
                     <motion.p
                         key={i}

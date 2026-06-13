@@ -10,8 +10,8 @@ function SkillsCard() {
                             max-lg:text-xl'>
                 <h1>My Expertise</h1>
             </div>
-            <div className='flex flex-col h-full justify-around'>
-                <div className='flex flex-col gap-5'>
+            <div className='flex flex-col h-full justify-around max-sm:justify-evenly'>
+                <div className='flex flex-col gap-5 max-sm:gap-2'>
                     <h2 className='text-white text-2xl
                                     max-lg:text-xl' >
                         Stack & Tools
@@ -24,7 +24,8 @@ function SkillsCard() {
                                 transition={{ duration: 0.1 }}
                                 key={skill}
                                 className='glass rounded-lg w-fit px-2 py-1
-                                            max-lg:text-sm'
+                                            max-lg:text-sm
+                                            max-sm:text-lg'
                                 style={{ border: '2px solid rgba(255,255,255,0)' }}
                             >
                                 {skill}

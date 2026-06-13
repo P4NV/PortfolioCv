@@ -4,10 +4,12 @@ function ProjectsCard() {
     return (
         <div className='h-full flex flex-row justify-between'>
             <div className='flex flex-col w-5/6 text-2xl
-                            max-lg:text-xl'>
+                            max-lg:text-xl
+                            max-sm:justify-center'>
                 <h1>Projects</h1>
                 <p className='text-xl
-                              max-lg:text-lg'>
+                              max-lg:text-lg
+                              max-sm:hidden'>
                     some some desc desc
                 </p>
             </div>
