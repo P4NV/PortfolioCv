@@ -25,6 +25,7 @@ function SkillsCard() {
                                 key={skill}
                                 className='glass rounded-lg w-fit px-2 py-1
                                             max-lg:text-sm
+                                            max-md:text-lg
                                             max-sm:text-lg'
                                 style={{ border: '2px solid rgba(255,255,255,0)' }}
                             >
