@@ -27,7 +27,7 @@ function ProjectsPage() {
                                     <div className='border w-full h-fit
                                                     max-lg:min-w-[450px]
                                                     max-sm:min-w-full'>
-                                        <img src="/public/project1.png" alt='project1' />
+                                        <img src="/project1.png" alt='project1' />
                                     </div>
                                     <div className='px-5 py-8'>
                                         <ul>
@@ -49,7 +49,7 @@ function ProjectsPage() {
                                     <div className='border w-full h-fit
                                                     max-lg:min-w-[450px]
                                                     max-sm:min-w-full'>
-                                        <img src="/public/project2.png" alt='project2' />
+                                        <img src="/project2.png" alt='project2' />
                                     </div>
                                     <div className='px-5 py-8'>
                                         <ul>
@@ -71,7 +71,7 @@ function ProjectsPage() {
                                     <div className='border w-full h-fit
                                                     max-lg:min-w-[450px]
                                                     max-sm:min-w-full'>
-                                        <img src="/public/project3.png" alt='project3' />
+                                        <img src="/project3.png" alt='project3' />
                                     </div>
                                     <div className='px-5 py-8'>
                                         <ul>

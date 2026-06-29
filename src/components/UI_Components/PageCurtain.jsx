@@ -11,14 +11,18 @@ export default function PageCurtain() {
                 className='fixed inset-0 z-50 bg-black pointer-events-none flex items-center justify-center'
                 initial={{ scaleY: 0, originY: '0%' }}
                 animate={{ scaleY: [0, 1, 1, 0], originY: ['0%', '0%', '100%', '100%'] }}
-                transition={{ duration: 1, times: [0, 0.3, 0.8, 1], ease: 'easeInOut' }}
+                transition={{
+                    duration: 1.5,
+                    times: [0, 0.15, 0.85, 1],
+                    ease: ['easeIn', 'linear', 'easeIn'],
+                }}
             >
                 <motion.span
                     className='text-white text-2xl font-semibold tracking-widest uppercase'
-                    animate={{ opacity: [0, 1, 1, 0] }}
-                    transition={{ duration: 1, times: [0, 0.35, 0.65, 1] }}
+                    animate={{ opacity: [1] }}
+                    transition={{ duration: 2, times: [2] }}
                 >
-                    Antonio Pavin
+                    <img src='/public/tumblr_mc23i6syO01rfjowdo1_500_gif (500×500).gif' alt='bat'/>
                 </motion.span>
             </motion.div>
         </AnimatePresence>
