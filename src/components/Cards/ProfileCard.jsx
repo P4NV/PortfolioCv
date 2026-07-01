@@ -12,7 +12,7 @@ function ProfileCard() {
                             max-xl:flex-row max-xl:max-w-full">
                 <div className="flex flex-col gap-1
                                 max-xl:max-w-[90%]">
-                    <span className="text-xl text-white tracking-widest uppercase
+                    <span className="text-xl text-white font-black tracking-widest uppercase
                                      max-xl:text-lg
                                      max-lg:text-sm
                                      max-sm:text-xs">
@@ -21,16 +21,16 @@ function ProfileCard() {
                     <p className="text-2xl font-semibold leading-snug
                                   max-lg:text-xl
                                   max-sm:text-[20px]">
-                        Hi, I'm <span className="text-white">Antonio Pavin</span>, a full-stack developer
-                        <span className="text-white"> (FrontEnd-leaning)</span> with a good eye for design.
+                        Hi, I'm <span className="text-white font-bold text-shadow-lg">Antonio Pavin</span>, a full-stack developer
+                        <span className="text-white font-bold text-shadow-lg"> (FrontEnd-leaning)</span> with a good eye for design.
                     </p>
-                    <p className="text-lg text-gray-300 leading-relaxed mt-1
+                    <p className="text-lg text-gray-300 leading-relaxed mt-1 text-shadow-lg
                                   max-lg:text-lg
                                   max-sm:text-sm">
                         I've worked freelance and I'm constantly pushing my skills forward —
                         always building, always learning.
                     </p>
-                    <p className="text-lg text-gray-300 leading-relaxed
+                    <p className="text-lg text-gray-300 leading-relaxed text-shadow-lg
                                   max-lg:text-sm
                                   max-sm:hidden">
                         Have a project in mind or just want to say hello?{" "}

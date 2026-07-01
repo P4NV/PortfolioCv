@@ -22,7 +22,7 @@ export default function PageCurtain() {
                     animate={{ opacity: [1] }}
                     transition={{ duration: 2, times: [2] }}
                 >
-                    <img src='/public/tumblr_mc23i6syO01rfjowdo1_500_gif (500×500).gif' alt='bat'/>
+                    <img src='/tumblr_mc23i6syO01rfjowdo1_500_gif (500×500).gif' alt='bat'/>
                 </motion.span>
             </motion.div>
         </AnimatePresence>

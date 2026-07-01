@@ -2,17 +2,17 @@ import {motion} from 'framer-motion'
 
 function SkillsCard() {
 
-    const skills = ['Html/Css','JavaScript','TypeScript','React','Next.js','Express.js','Node.js','PostgreSQL','Motion','TailwindCSS']
+    const skills = ['Html/Css','JavaScript','TypeScript','Java','React','SpringBoot','Next.js','Express.js','Node.js','PostgreSQL','Motion','TailwindCSS']
 
     return (
         <div className='h-full'>
-            <div className='text-white text-2xl
+            <div className='text-white text-2xl font-black tracking-wider text-shadow-lg
                             max-lg:text-xl'>
                 <h1>My Expertise</h1>
             </div>
             <div className='flex flex-col h-full justify-around max-sm:justify-evenly'>
                 <div className='flex flex-col gap-5 max-sm:gap-2'>
-                    <h2 className='text-white text-2xl
+                    <h2 className='text-white text-2xl font-black tracking-widest text-shadow-lg
                                     max-lg:text-xl' >
                         Stack & Tools
                     </h2>
@@ -35,9 +35,9 @@ function SkillsCard() {
                     </div>
                 </div>
                 <section>
-                    <p className='text-white text-xl
+                    <p className='text-white text-xl font-semibold tracking-wide text-shadow-lg
                                     max-lg:text-lg '>
-                        Beyond coding, I'm passionate about design, illustration, animation, photography, and parametric 3D modelling. I love travelling, and I have an unusual hobby of collecting vintage passports, fascinating pieces of history.
+                        Beyond coding, I'm passionate about design,3D modeling,art and electronics. Love creating and discovering new interests
                     </p>
                 </section>
             </div>
