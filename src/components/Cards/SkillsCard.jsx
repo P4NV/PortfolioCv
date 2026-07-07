@@ -23,7 +23,7 @@ function SkillsCard() {
                                 whileHover={{ borderColor: 'rgba(255,255,255,1)' }}
                                 transition={{ duration: 0.1 }}
                                 key={skill}
-                                className='glass rounded-lg w-fit px-2 py-1
+                                className='glass rounded-lg w-fit px-2 py-1 font-semibold
                                             max-lg:text-sm
                                             max-md:text-lg
                                             max-sm:text-lg'
