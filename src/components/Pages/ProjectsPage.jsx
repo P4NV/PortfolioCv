@@ -142,7 +142,7 @@ function ProjectsPage() {
                                         {/* Left Arrow Animation */}
                                         {activeImages.length > 1 && (
                                             <motion.button
-                                                initial={{ opacity: 0, x: -20 }}
+                                                initial={{ opacity: 1, x: -20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 exit={{ opacity: 0, x: -20 }}
                                                 className='text-white w-12 h-14 text-3xl bg-white/30 hover:bg-white/50 p-2 rounded-xl transition-all z-50
@@ -167,7 +167,7 @@ function ProjectsPage() {
                                         {/* Right Arrow Animation */}
                                         {activeImages.length > 1 && (
                                             <motion.button
-                                                initial={{ opacity: 0, x: 20 }}
+                                                initial={{ opacity: 1, x: 20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 exit={{ opacity: 0, x: 20 }}
                                                 className='text-white w-12 h-14 text-3xl bg-white/30 hover:bg-white/50 p-2 rounded-xl transition-all z-50

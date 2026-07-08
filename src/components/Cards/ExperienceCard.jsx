@@ -10,7 +10,7 @@ function ExperienceCard() {
                 <p className='text-xl
                               max-lg:text-[18px]
                               max-sm:hidden'>
-                    My thoughts and process
+                    My Journey in Software
                 </p>
             </div>
             <button className='w-8 h-8 hover:cursor-pointer
