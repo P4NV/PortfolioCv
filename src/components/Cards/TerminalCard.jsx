@@ -10,21 +10,21 @@ const lines = [
         { text: '{', className: 'text-yellow-400 font-bold' },
     ],
     [
-        { text: '  origin', className: 'text-amber-400' },
+        { text: '  role', className: 'text-amber-400' },
         { text: ': ', className: 'text-white/70' },
-        { text: "'Frontend Developer'", className: 'text-emerald-400' },
+        { text: "'Full-Stack Engineer'", className: 'text-emerald-400' },
         { text: ',', className: 'text-white/40' },
     ],
     [
-        { text: '  evolution', className: 'text-amber-400' },
+        { text: '  specialization', className: 'text-amber-400' },
         { text: ': ', className: 'text-white/70' },
-        { text: "'Freelance Apps'", className: 'text-emerald-400' },
+        { text: "'Frontend Engineering'", className: 'text-emerald-400' },
         { text: ',', className: 'text-white/40' },
     ],
     [
         { text: '  currentFocus', className: 'text-amber-400' },
         { text: ': ', className: 'text-white/70' },
-        { text: "'Systems & Architecture'", className: 'text-emerald-400' },
+        { text: "'Scalable Systems & UI Architecture'", className: 'text-emerald-400' },
         { text: ',', className: 'text-white/40' },
     ],
     [
@@ -33,16 +33,18 @@ const lines = [
         { text: '[', className: 'text-purple-400' },
         { text: "'React'", className: 'text-emerald-400' },
         { text: ', ', className: 'text-white/40' },
-        { text: "'Node'", className: 'text-emerald-400' },
+        { text: "'TypeScript'", className: 'text-emerald-400' },
         { text: ', ', className: 'text-white/40' },
-        { text: "'Postgres'", className: 'text-emerald-400' },
+        { text: "'Node.js'", className: 'text-emerald-400' },
+        { text: ', ', className: 'text-white/40' },
+        { text: "'PostgreSQL'", className: 'text-emerald-400' },
         { text: ']', className: 'text-purple-400' },
         { text: ',', className: 'text-white/40' },
     ],
     [
-        { text: '  alwaysLearning', className: 'text-amber-400' },
+        { text: '  principle', className: 'text-amber-400' },
         { text: ': ', className: 'text-white/70' },
-        { text: 'true', className: 'text-purple-400 font-medium' },
+        { text: "'Build intuitive interfaces. Engineer reliable systems.'", className: 'text-emerald-400' },
     ],
     [
         { text: '};', className: 'text-yellow-400 font-bold' },
@@ -171,7 +173,7 @@ export default function TerminalCard() {
             </div>
 
             {/* Realtime compilation block layout */}
-            <div className="relative z-10 flex flex-1 flex-col gap-1.5 font-mono text-xs sm:text-sm">
+            <div className="relative z-10 flex flex-wrap flex-1 flex-col gap-1.5 font-mono text-xs sm:text-sm">
                 {lines.map((segments, i) => (
                     <Line
                         key={i}

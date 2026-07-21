@@ -30,7 +30,7 @@
 @media (max-width: 1282px) {
     .bento {
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(5, 120px);
+        grid-template-rows: repeat(5, 125px);
         gap: 16px;
         margin: 50px 25px;
         max-width: 1200px;
@@ -39,7 +39,7 @@
 @media (max-width: 1052px) {
     .bento {
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(5, 120px);
+        grid-template-rows: repeat(5, 125px);
         gap: 16px;
         margin: 50px 25px;
         max-width: 1100px;
@@ -178,6 +178,6 @@
 @media (max-width: 420px) {
     .small-card-c {
         grid-column: 1 / 13;
-        grid-row: 12 / 14;
+        grid-row: 12 / 16;
     }
 }
