@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function ProjectsPage() {
     const project1Images = ["/ivas1.png", "/ivas2.png", "/ivas3.png", "/ivas4.png", "/ivas5.png"];
-    const project2Images = ["/project2.png", "/project2_2.png"];
+    const project2Images = ["/invMenagment1.png", "/invMenagment2.png", "/invMenagment3.png", "/invMenagment4.png"];
     const project3Images = ["/project3.png", "/project3_2.png", "/project3_3.png"];
 
     const [activeImages, setActiveImages] = useState([]);
