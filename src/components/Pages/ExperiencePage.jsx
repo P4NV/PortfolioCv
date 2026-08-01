@@ -39,10 +39,10 @@ function ExperiencePage() {
                                             <div className='absolute left-0 bg-neutral-900 border border-white/20 p-1 rounded-md text-cyan-400 group-hover:border-cyan-400 transition-colors'>
                                                 <Atom size={14} className="stroke-[2.5]" />
                                             </div>
-                                            <span>The Genesis: Front-End Focus</span>
+                                            <span>FrontEnd Specialization</span>
                                         </div>
                                         <p className='text-xs sm:text-sm text-white/60 font-light mt-1 leading-relaxed group-hover:text-white/80 transition-colors'>
-                                            I started my engineering journey deep-diving into interactive user interfaces, mastering React and Next.js to optimize presentation states, animation, and client-side logic.
+                                            I started my engineering journey with FrontEnd education focusing on component driven architecture and clean,scalable code in react and javascript later on with typescript.
                                         </p>
                                     </div>
 
@@ -54,7 +54,7 @@ function ExperiencePage() {
                                             <span>Freelance Foundations</span>
                                         </div>
                                         <p className='text-xs sm:text-sm text-white/60 font-light mt-1 leading-relaxed group-hover:text-white/80 transition-colors'>
-                                            Transitioned into delivering bespoke full-stack applications for small business clients, bridging business requirements with functional, high-converting digital products.
+                                            Started Building fullstack applications for local businesses.
                                         </p>
                                     </div>
 
@@ -66,7 +66,7 @@ function ExperiencePage() {
                                             <span>Systems & Architecture Expansion</span>
                                         </div>
                                         <p className='text-xs sm:text-sm text-white/60 font-light mt-1 leading-relaxed group-hover:text-white/80 transition-colors'>
-                                            Evolved completely into backend engineering and system architecture. Designed resilient, highly-scalable backend services using Node.js and structured relational data layouts in PostgreSQL.
+                                            Started experimenting with backend engineering and system architecture.Reusable and scalable components,scalable backend services using Node.js and structured relational data layouts in PostgreSQL.
                                         </p>
                                     </div>
 
@@ -78,7 +78,7 @@ function ExperiencePage() {
                                             <span>Continuous Discovery</span>
                                         </div>
                                         <p className='text-xs sm:text-sm text-white/60 font-light mt-1 leading-relaxed group-hover:text-white/80 transition-colors'>
-                                            Today, I constant push into bleeding-edge technology ecosystems—experimenting with microservices, complex animations like Framer Motion, and finding new tools to refine my stack.
+                                            I constantly push into new  technology ecosystems—experimenting with microservices,complex animations like Framer Motion, and finding new tools to refine my stack.
                                         </p>
                                     </div>
 
@@ -86,6 +86,7 @@ function ExperiencePage() {
                             </section>
 
                             {/* Right Visual Segment - High Contrast UI Micro-Views */}
+                            {/*triba napraviti usestate da activni tab bude full height ali da ne conflictuje druge elemente i do su drugi neaktivni budu u jednostavnom baru*/}
                             <section className='w-full lg:w-[45%] flex flex-col sm:flex-row lg:flex-col gap-5 justify-center items-stretch'>
 
                                 {/* UI Layout / Wireframe Card */}
