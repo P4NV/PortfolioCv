@@ -2,8 +2,13 @@ import Background from "../UI_Components/Background.jsx";
 import PageTransition from "../UI_Components/PageTransition.jsx";
 import BackButton from "../UI_Components/BackButton.jsx";
 import { Atom, Zap, Database, Sparkles, Layout, Terminal, BarChart3 } from "lucide-react";
+import {useState} from "react";
+import {AnimatePresence, motion} from "framer-motion";
 
 function ExperiencePage() {
+
+    const [activeCard,setActiveCard] = useState('layout');
+
     return (
         <PageTransition>
             <div className='relative w-screen h-screen overflow-y-auto font-sans antialiased selection:bg-white/20 selection:text-white'>
@@ -87,49 +92,145 @@ function ExperiencePage() {
 
                             {/* Right Visual Segment - High Contrast UI Micro-Views */}
                             {/*triba napraviti usestate da activni tab bude full height ali da ne conflictuje druge elemente i do su drugi neaktivni budu u jednostavnom baru*/}
+                            {/*isto tako za ui layout napravi timeline i progres u ui designu za system design isto tako samo vrstu koda kako se razvijalo
+                            iz jedan u drugi i tako loop napraviti da ide naprid do zadnjeg pa od zadnjeg do prvog*/}
+                            {/*pripaziti na breakpointe na manjen napraviti samo da icone budu */}
+                            {/*dalje poboljsati animacije elemenata i napraviti kartice za view switch */}
                             <section className='w-full lg:w-[45%] flex flex-col sm:flex-row lg:flex-col gap-5 justify-center items-stretch'>
 
                                 {/* UI Layout / Wireframe Card */}
-                                <div className='glass_card p-4 flex-1 flex flex-col justify-between min-h-[115px] border border-white/20 bg-neutral-950/40 relative overflow-hidden group hover:border-white/40 transition-all shadow-lg'>
-                                    <div className='flex justify-between items-center mb-2'>
-                                        <div className='flex gap-1.5'>
-                                            <div className='w-2 h-2 rounded-full bg-white/40' />
-                                            <div className='w-2 h-2 rounded-full bg-white/40' />
-                                            <div className='w-2 h-2 rounded-full bg-white/40' />
-                                        </div>
-                                        <Layout size={14} className="text-white/40 group-hover:text-white/70 transition-colors" />
-                                    </div>
-                                    <div className='w-full h-3 bg-white/20 rounded-sm mb-3' />
-                                    <div className='grid grid-cols-3 gap-2 flex-grow'>
-                                        <div className='bg-white/5 rounded border border-dashed border-white/20 flex items-center justify-center text-[10px] text-white/50 font-mono'>App</div>
-                                        <div className='bg-white/5 rounded border border-dashed border-white/20 flex items-center justify-center text-[10px] text-white/50 font-mono'>UI</div>
-                                        <div className='bg-white/5 rounded border border-dashed border-white/20 flex items-center justify-center text-[10px] text-white/50 font-mono'>Grid</div>
-                                    </div>
-                                </div>
+                                <motion.div
+                                    layout
+                                    transition={{ type: "tween",duration: 0.2 }}
+                                    onClick={() => setActiveCard('layout')}
+                                    className={`glass_card p-6 border rounded-2xl cursor-pointer relative overflow-hidden group
+                                    ${activeCard === 'layout' ? 'flex-1 min-h-[250px] border-white/40 bg-neutral-950/60 shadow-xl' : 'h-16 flex items-center border-white/10 bg-neutral-950/20 hover:border-white/20'
+                                    }`}>
+                                    <AnimatePresence mode="wait">
+                                        {activeCard === 'layout' ? (
+                                            <motion.div
+                                                key="layout-expanded"
+                                                initial={{ opacity: 0, y: 10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0, y: -10 }}
+                                                transition={{ duration: 0.1 }}
+                                            >
+                                                <div className='flex justify-between items-center mb-2'>
+                                                    <div className='flex gap-1.5'>
+                                                        <div className='w-2 h-2 rounded-full bg-white/40' />
+                                                        <div className='w-2 h-2 rounded-full bg-white/40' />
+                                                        <div className='w-2 h-2 rounded-full bg-white/40' />
+                                                    </div>
+                                                    <Layout size={14} className="text-white/40 group-hover:text-white/70 transition-colors" />
+                                                </div>
+                                                <div className='w-full h-3 bg-white/20 rounded-sm mb-3' />
+                                                <div className='grid grid-cols-3 gap-2 flex-grow'>
+                                                    <div className='bg-white/5 rounded border border-dashed border-white/20 flex items-center justify-center text-[10px] text-white/50 font-mono py-4'>App</div>
+                                                    <div className='bg-white/5 rounded border border-dashed border-white/20 flex items-center justify-center text-[10px] text-white/50 font-mono py-4'>UI</div>
+                                                    <div className='bg-white/5 rounded border border-dashed border-white/20 flex items-center justify-center text-[10px] text-white/50 font-mono py-4'>Grid</div>
+                                                </div>
+                                            </motion.div>
+                                        ) : (
+                                            <motion.div
+                                                key="layout-collapsed"
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                exit={{ opacity: 0 }}
+                                                transition={{ duration: 0.1 }}
+                                                className="flex items-center gap-3 text-cyan-400/60 group-hover:text-cyan-400 transition-colors"
+                                            >
+                                                <Layout size={18} />
+                                                <span className="text-sm font-medium text-white/60 group-hover:text-white/90">UI Layout Workspace</span>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </motion.div>
 
                                 {/* Code / Terminal Card */}
-                                <div className='glass_card p-4 flex-1 font-mono text-[11px] leading-relaxed text-cyan-300 min-h-[115px] border border-white/20 bg-neutral-950/60 flex flex-col justify-center shadow-2xl relative group hover:border-white/40 transition-all'>
-                                    <Terminal size={14} className="absolute top-3 right-3 text-white/30 group-hover:text-white/60 transition-colors" />
-                                    <div><span className='text-purple-400 font-semibold'>const</span> engineer = &#123;</div>
-                                    <div className='pl-4'><span className='text-amber-400'>stack</span>: <span className='text-emerald-400'>'NextJS + Node'</span>,</div>
-                                    <div className='pl-4'><span className='text-amber-400'>db</span>: <span className='text-emerald-400'>'PostgreSQL'</span>,</div>
-                                    <div className='pl-4'><span className='text-amber-400'>pattern</span>: <span className='text-emerald-400'>'Architecture'</span></div>
-                                    <div>&#125;;</div>
-                                </div>
+                                <motion.div
+                                    layout
+                                    transition={{ type: "tween",duration: 0.2}}
+                                    onClick={() => setActiveCard('terminal')}
+                                    className={`glass_card p-6 border rounded-2xl cursor-pointer relative overflow-hidden group
+                                    ${activeCard === 'terminal' ? 'flex-1 min-h-[250px] border-white/40 bg-neutral-950/60 shadow-xl' : 'h-16 flex items-center border-white/10 bg-neutral-950/20 hover:border-white/20'
+                                    }`}>
+                                    <AnimatePresence mode="wait">
+                                        {activeCard === 'terminal' ? (
+                                            <motion.div
+                                                key="terminal-expanded"
+                                                initial={{ opacity: 0, y: 10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0, y: -10 }}
+                                                transition={{ duration: 0.2 }}
+                                                className="font-mono text-xs sm:text-sm text-white/80"
+                                            >
+                                                <Terminal size={14} className="absolute top-3 right-3 text-white/30 group-hover:text-white/60 transition-colors" />
+                                                <div><span className='text-purple-400 font-semibold'>const</span> engineer = {'{'}</div>
+                                                <div className='pl-4'><span className='text-amber-400'>stack</span>: <span className='text-emerald-400'>'NextJS + Node'</span>,</div>
+                                                <div className='pl-4'><span className='text-amber-400'>db</span>: <span className='text-emerald-400'>'PostgreSQL'</span>,</div>
+                                                <div className='pl-4'><span className='text-amber-400'>pattern</span>: <span className='text-emerald-400'>'Architecture'</span></div>
+                                                <div>{'};'}</div>
+                                            </motion.div>
+                                        ) : (
+                                            <motion.div
+                                                key="terminal-collapsed"
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                exit={{ opacity: 0 }}
+                                                className="flex items-center gap-3 text-emerald-400/60 group-hover:text-emerald-400 transition-colors"
+                                            >
+                                                <Terminal size={18} />
+                                                <span className="text-sm font-medium text-white/60 group-hover:text-white/90">System Terminal</span>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </motion.div>
 
                                 {/* Analytics / Performance Bar Chart Card */}
-                                <div className='glass_card p-4 flex-1 flex flex-col justify-between min-h-[115px] border border-white/20 bg-neutral-950/40 relative group hover:border-white/40 transition-all shadow-lg'>
-                                    <div className='flex justify-between items-center w-full mb-1'>
-                                        <span className='text-[10px] font-mono font-bold tracking-wider text-white/50'>METRICS / SYSTEM LOAD</span>
-                                        <BarChart3 size={14} className="text-white/40 group-hover:text-white/70 transition-colors" />
-                                    </div>
-                                    <div className='flex items-end justify-between gap-3 h-14 w-full px-2'>
-                                        <div className='w-full bg-white/20 h-[35%] rounded-t-sm transition-all group-hover:bg-cyan-400 duration-500' />
-                                        <div className='w-full bg-white/20 h-[65%] rounded-t-sm transition-all group-hover:bg-emerald-400 duration-500 delay-75' />
-                                        <div className='w-full bg-white/20 h-[100%] rounded-t-sm transition-all group-hover:bg-purple-400 duration-500 delay-150' />
-                                        <div className='w-full bg-white/20 h-[50%] rounded-t-sm transition-all group-hover:bg-amber-400 duration-500 delay-200' />
-                                    </div>
-                                </div>
+                                <motion.div
+                                    layout
+                                    transition={{ type: "tween",duration: 0.2}}
+                                    onClick={() => setActiveCard('metrics')}
+                                    className={`glass_card p-6 border rounded-2xl cursor-pointer relative overflow-hidden group
+                                    ${activeCard === 'metrics'
+                                        ? 'flex-1 min-h-[250px] border-white/40 bg-neutral-950/60 shadow-xl'
+                                        : 'h-16 flex items-center border-white/10 bg-neutral-950/20 hover:border-white/20'
+                                    }`}>
+                                    <AnimatePresence mode="wait">
+                                        {activeCard === 'metrics' ? (
+                                            <motion.div
+                                                key="metrics-expanded"
+                                                initial={{ opacity: 0, y: 10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0, y: -10 }}
+                                                transition={{ duration: 0.2 }}
+                                                className="w-full"
+                                            >
+                                                <div className='flex justify-between items-center w-full mb-3'>
+                                                    <span className='text-[10px] font-mono font-bold tracking-wider text-white/50'>METRICS / SYSTEM LOAD</span>
+                                                    <BarChart3 size={14} className="text-white/40 group-hover:text-white/70 transition-colors" />
+                                                </div>
+                                                <div className='flex items-end justify-between gap-3 h-16 w-full px-2'>
+                                                    <div className='w-full bg-white/20 h-[35%] rounded-t-sm transition-all group-hover:bg-cyan-400 duration-500' />
+                                                    <div className='w-full bg-white/20 h-[65%] rounded-t-sm transition-all group-hover:bg-emerald-400 duration-500 delay-75' />
+                                                    <div className='w-full bg-white/20 h-[100%] rounded-t-sm transition-all group-hover:bg-purple-400 duration-500 delay-150' />
+                                                    <div className='w-full bg-white/20 h-[50%] rounded-t-sm transition-all group-hover:bg-amber-400 duration-500 delay-200' />
+                                                </div>
+                                            </motion.div>
+                                        ) : (
+                                            <motion.div
+                                                key="metrics-collapsed"
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                exit={{ opacity: 0 }}
+                                                className="flex items-center gap-3 text-amber-400/60 group-hover:text-amber-400 transition-colors"
+                                            >
+                                                <BarChart3 size={18} />
+                                                <span className="text-sm font-medium text-white/60 group-hover:text-white/90">Performance Metrics</span>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </motion.div>
 
                             </section>
                         </div>

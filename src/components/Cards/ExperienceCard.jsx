@@ -16,7 +16,7 @@ function ExperienceCard() {
             <button className='w-8 h-8 hover:cursor-pointer
                                max-lg:w-6 max-lg:h-6'>
                 <Link to='/components/Pages/ExperiencePage'>
-                    <img src='/external-link.png' alt='External link'/>
+                    <img className='whit' src='/external-link.png' alt='External link'/>
                 </Link>
             </button>
         </div>

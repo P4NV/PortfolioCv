@@ -75,7 +75,7 @@ function ProjectsPage() {
                                 {/* Project 1 */}
                                 <div className='flex flex-col h-full w-1/3 items-center max-lg:w-full overflow-clip'>
                                     <div
-                                        className='rounded-xl hover:shadow-white hover:shadow-lg  overflow-clip w-full h-fit max-w-[450px] shrink-0 max-lg:min-w-[450px] max-sm:min-w-full cursor-pointer transition-transform'
+                                        className='rounded-xl hover:shadow-white hover:shadow-lg  overflow-clip w-full h-fit max-w-[450px] shrink-0 max-lg:min-w-[450px] max-sm:min-w-full cursor-pointer transition-all duration-300'
                                         onClick={() => openLightbox(project1Images, 0)}
                                     >
                                         <img src={project1Images[0]} alt='project1' className="w-full h-auto" />
@@ -86,7 +86,7 @@ function ProjectsPage() {
                                 {/* Project 2 */}
                                 <div className='flex flex-col h-full w-1/3 items-center max-lg:w-full overflow-clip'>
                                     <div
-                                        className='rounded-xl hover:shadow-white hover:shadow-lg  overflow-clip w-full h-fit max-w-[450px] shrink-0 max-lg:min-w-[450px] max-sm:min-w-full cursor-pointer transition-transform '
+                                        className='rounded-xl hover:shadow-white hover:shadow-lg  overflow-clip w-full h-fit max-w-[450px] shrink-0 max-lg:min-w-[450px] max-sm:min-w-full cursor-pointer transition-all duration-300'
                                         onClick={() => openLightbox(project2Images, 0)}
                                     >
                                         <img src={project2Images[0]} alt='project2' className="w-full h-auto" />
@@ -97,7 +97,7 @@ function ProjectsPage() {
                                 {/* Project 3 */}
                                 <div className='flex flex-col h-full w-1/3 items-center max-lg:w-full overflow-clip'>
                                     <div
-                                        className='rounded-xl hover:shadow-white hover:shadow-lg  overflow-clip w-full h-fit max-w-[450px] shrink-0 max-lg:min-w-[450px] max-sm:min-w-full cursor-pointer transition-transform'
+                                        className='rounded-xl hover:shadow-white hover:shadow-lg  overflow-clip w-full h-fit max-w-[450px] shrink-0 max-lg:min-w-[450px] max-sm:min-w-full cursor-pointer transition-all duration-300'
                                         onClick={() => openLightbox(project3Images, 0)}
                                     >
                                         <img src={project3Images[0]} alt='project3' className="w-full h-auto" />
